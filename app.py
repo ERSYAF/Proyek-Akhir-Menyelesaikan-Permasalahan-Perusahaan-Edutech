@@ -72,7 +72,6 @@ model, scaler, label_encoders = load_models()
 # Title
 st.title("🎓 Sistem Prediksi Dropout Berbasis Machine Learning")
 st.markdown("""
-### by Ali Akbar Said
 Masukkan data mahasiswa untuk memprediksi kemungkinan mahasiswa terkena dropout.
 """)
 
