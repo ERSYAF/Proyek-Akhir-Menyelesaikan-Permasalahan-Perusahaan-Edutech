@@ -7,7 +7,6 @@ import os
 # Set page config - must be first Streamlit command
 st.set_page_config(
     page_title="Prediksi Mahasiswa yang Dropout by Era Syafina",
-    page_icon="🎓",
     layout="wide"
 )
 
