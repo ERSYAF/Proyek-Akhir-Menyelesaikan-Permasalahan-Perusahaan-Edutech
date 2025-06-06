@@ -246,7 +246,9 @@ if st.sidebar.button("🔍 Prediksi Dropout"):
             'bar': {'color': "#dc2626" if prediction_proba >= 0.5 else "#16a34a"},
             'steps': [
                 {'range': [0, 50], 'color': "#a7f3d0"},
-                {'range': [50, 100], 'color': "#fecaca"}],
+                {'range': [50, 100], 'color': "#fecaca"},
+                {'range': [70, 100], 'color': "salmon"}
+            ],
             'threshold': {
                 'line': {'color': "black", 'width': 4},
                 'thickness': 0.75,
