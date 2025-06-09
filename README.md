@@ -129,7 +129,7 @@ Ikuti petunjuk berikut untuk mengoperasikan sistem machine learning yang telah d
    Sistem akan berjalan secara lokal dan bisa dibuka di:
    [http://localhost:3000/](http://localhost:3000/)
    Selain itu, versi online yang telah di-deploy dapat diakses di:
-   [https://proyek-akhir-menyelesaikan-permasalahan-perusahaan-edutech-fp3.streamlit.app/](https://proyek-akhir-menyelesaikan-permasalahan-perusahaan-edutech-fp3.streamlit.app/)
+   [https://proyek-akhir-menyelesaikan-permasalahan-perusahaan-edutech-sv7.streamlit.app/](https://proyek-akhir-menyelesaikan-permasalahan-perusahaan-edutech-sv7.streamlit.app/)
 
 4. **Mengoperasikan Aplikasi**
 
