@@ -133,13 +133,14 @@ Ikuti petunjuk berikut untuk mengoperasikan sistem machine learning yang telah d
 
 4. **Mengoperasikan Aplikasi**
 
-   - Masukkan data siswa ke dalam formulir seperti status pernikahan, program studi, dan nilai masuk.
-   - Klik tombol **"🔍 Prediksi"** untuk melihat hasil prediksi.
+   - Isi data mahasiswa pada formulir, seperti status pernikahan, program studi, nilai kualifikasi sebelumnya, dan data lain yang diperlukan.
+   - Klik tombol "Prediksi Dropout" untuk mendapatkan hasil prediksi risiko dropout berdasarkan data yang diisi.
+   - Dan juga bisa klik tombol "Prediksi Acak" untuk melihat prediksi menggunakan data acak sebagai simulasi.
 
 5. **Memahami Output Prediksi**
 
-   - Jika muncul **"BERISIKO DROPOUT"**, aplikasi akan menampilkan persentase risiko dan indikator visual pendukung.
-   - Jika hasilnya **"TIDAK BERISIKO"**, ditampilkan tingkat kemungkinan bertahan beserta visualisasinya.
+   - Jika hasil prediksi menunjukkan Risiko DROP OUT Tinggi, aplikasi akan menampilkan persentase risiko beserta indikator visual berwarna merah sebagai peringatan.
+   - Jika hasil prediksi menunjukkan Risiko DROP OUT Rendah, aplikasi akan menampilkan persentase risiko beserta indikator visual berwarna hijau yang menandakan risiko rendah.
 
 Prototipe ini dirancang untuk mendukung institusi pendidikan dalam mengidentifikasi siswa yang rentan terhadap dropout, serta memfasilitasi tindakan intervensi yang tepat waktu.
 
