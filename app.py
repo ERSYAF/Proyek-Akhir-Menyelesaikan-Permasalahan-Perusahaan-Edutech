@@ -6,7 +6,8 @@ import os
 
 # Set page config - must be first Streamlit command
 st.set_page_config(
-    page_title="Prediksi Mahasiswa yang Dropout by Era Syafina",
+    page_title="Prediksi Mahasiswa yang Dropout",
+    page_icon="🎓",
     layout="wide"
 )
 
@@ -69,16 +70,17 @@ def load_models():
 model, scaler, label_encoders = load_models()
 
 # Title
-st.title("🎓 Sistem Prediksi Dropout Berbasis Machine Learning")
+st.title("Sistem Prediksi Dropout Berbasis Machine Learning")
 st.markdown("""
-Masukkan data mahasiswa untuk memprediksi kemungkinan mahasiswa terkena dropout.
+### by Ersyafin
+Masukkan data mahasiswa untuk memprediksi mahasiswa terkena dropout.
 """)
 
 with st.form("prediction_form"):
     st.subheader("Formulir Input Data Mahasiswa")
 
     # Kelompok 1: Informasi Dasar Mahasiswa
-    with st.expander("📋 Informasi Dasar Mahasiswa"):
+    with st.expander("Informasi Dasar Mahasiswa"):
         marital_status_mapping = {
             "1 - Single": 1,
             "2 - Married": 2,
@@ -140,7 +142,7 @@ with st.form("prediction_form"):
         daytime_evening_attendance = st.selectbox("Waktu Kehadiran", options={"1 - Daytime": 1, "0 - Evening": 0})
 
     # Kelompok 2: Kualifikasi dan Latar Belakang
-    with st.expander("🎓 Kualifikasi dan Latar Belakang"):
+    with st.expander("Kualifikasi dan Latar Belakang"):
         previous_qualification_mapping = {
             "1 - Secondary education": 1,
             "2 - Higher education - bachelor's degree": 2,
@@ -278,7 +280,7 @@ with st.form("prediction_form"):
         fathers_occupation = fathers_occupation_mapping[fathers_occupation]
 
     # Kelompok 3: Informasi Akademik
-    with st.expander("📚 Informasi Akademik"):
+    with st.expander("Informasi Akademik"):
         admission_grade = st.number_input("Nilai Masuk", min_value=0.0, max_value=200.0, value=100.0)
 
         curricular_units_1st_sem_credited = st.number_input("Jumlah SKS Terakreditasi Semester 1", min_value=0)
@@ -296,7 +298,7 @@ with st.form("prediction_form"):
         curricular_units_2nd_sem_without_evaluations = st.number_input("SKS Tanpa Evaluasi Semester 2", min_value=0)
 
     # Kelompok 4: Informasi Ekonomi dan Sosial
-    with st.expander("💼 Informasi Ekonomi dan Sosial"):
+    with st.expander("Informasi Ekonomi dan Sosial"):
         boolean_mapping = {
             "Tidak": 0,
             "Ya": 1
@@ -329,7 +331,7 @@ with st.form("prediction_form"):
         age_at_enrollment = st.number_input("Usia Saat Pendaftaran", min_value=15, max_value=100, value=18)
 
     # Kelompok 5: Indikator Ekonomi Makro
-    with st.expander("📈 Indikator Ekonomi Makro"):
+    with st.expander("Indikator Ekonomi Makro"):
         unemployment_rate = st.number_input("Tingkat Pengangguran (%)", min_value=0.0, max_value=100.0)
         inflation_rate = st.number_input("Tingkat Inflasi (%)", min_value=0.0, max_value=100.0)
         gdp = st.number_input("GDP (miliar Euro)", min_value=0.0)
@@ -400,7 +402,7 @@ if submitted and model and scaler and label_encoders:
 
         # Display results
         st.markdown("---")
-        st.header("📊 Hasil Prediksi")
+        st.header("Hasil Prediksi")
         
         col_result1, col_result2 = st.columns(2)
         
@@ -408,14 +410,14 @@ if submitted and model and scaler and label_encoders:
             if prediction[0] == 1:
                 st.markdown(f"""
                     <div class='prediction-box high-risk'>
-                        <h3>⚠️ Status: BERISIKO DROPOUT</h3>
+                        <h3>Status: BERISIKO DROPOUT</h3>
                         <p style='font-size: 20px;'>Probabilitas: {probability:.2%}</p>
                     </div>
                 """, unsafe_allow_html=True)
             else:
                 st.markdown(f"""
                     <div class='prediction-box low-risk'>
-                        <h3>✅ Status: TIDAK BERISIKO</h3>
+                        <h3>Status: TIDAK BERISIKO</h3>
                         <p style='font-size: 20px;'>Probabilitas Bertahan: {1-probability:.2%}</p>
                     </div>
                 """, unsafe_allow_html=True)
