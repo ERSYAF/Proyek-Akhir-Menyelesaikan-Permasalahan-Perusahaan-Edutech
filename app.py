@@ -50,7 +50,8 @@ def generate_random_input():
         "Age": age
     }
 
-# Form input manual
+# -----------------------------------
+# FORM INPUT MANUAL
 with st.form("form_input"):
     st.header("Isi Data Mahasiswa")
     marital_status = st.selectbox("Status Pernikahan", ["Single", "Married", "Divorced"])
@@ -75,16 +76,20 @@ with st.form("form_input"):
     
     submitted = st.form_submit_button("Prediksi Dropout")
 
-# Tombol prediksi acak
+# -----------------------------------
+# LOGIKA PREDIKSI ACak
 if st.button("Prediksi Acak"):
     random_input = generate_random_input()
     st.write("Data Acak yang Digunakan untuk Prediksi:")
     st.json(random_input)
+    
     # Simulasi prediksi probabilitas acak
     prob = np.random.rand()
+    risk_percentage = round(prob * 100, 2)
+    
     st.markdown("---")
     st.subheader("Hasil Prediksi:")
-    risk_percentage = round(prob * 100, 2)
+    
     if risk_percentage > 50:
         st.markdown(f"""
             <div style="background-color:#ffcccc; padding:10px; border-radius:8px;">
@@ -100,9 +105,10 @@ if st.button("Prediksi Acak"):
             </div>
         """, unsafe_allow_html=True)
 
-# Jika submit form manual
+# -----------------------------------
+# LOGIKA PREDIKSI DARI FORM MANUAL
 if submitted:
-    # Masukkan data input ke dataframe (kalau mau pakai model nanti tinggal dipakai disini)
+    # Masukkan data input ke dataframe
     input_df = pd.DataFrame([{
         "Marital_Status": marital_status,
         "Application_Mode": application_mode,
@@ -128,11 +134,13 @@ if submitted:
     st.write("Data Input:")
     st.dataframe(input_df)
     
-    # Simulasi prediksi dengan random probabilitas
+    # Simulasi prediksi dengan probabilitas random
     prob = np.random.rand()
+    risk_percentage = round(prob * 100, 2)
+    
     st.markdown("---")
     st.subheader("Hasil Prediksi:")
-    risk_percentage = round(prob * 100, 2)
+    
     if risk_percentage > 50:
         st.markdown(f"""
             <div style="background-color:#ffcccc; padding:10px; border-radius:8px;">
@@ -147,14 +155,15 @@ if submitted:
             <p>Mahasiswa ini memiliki risiko dropout yang rendah.</p>
             </div>
         """, unsafe_allow_html=True)
-        
-        # Footer
+
+# -----------------------------------
+# FOOTER
 st.markdown("""
 <br><br>
 <hr style="border: 1px solid #e5e7eb;">
 
 <div style="text-align:center; padding: 10px 0 20px 0; font-size: 0.9rem; color: #6b7280;">
-    🚀 Dibuat dengan oleh <strong>Era Syafina</strong> <br>
+    🚀 Dibuat oleh <strong>Era Syafina</strong> <br>
     Aplikasi Prediksi Dropout Mahasiswa berbasis Machine Learning | 2025 <br>
     <a href="mailto:erasyafina025@email.com" style="color: #3b82f6; text-decoration: none;">Hubungi Saya</a> |
     <a href="https://github.com/ERSYAF" target="_blank" style="color: #3b82f6; text-decoration: none;">GitHub</a> |
